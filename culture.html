@@ -1,8 +1,85 @@
-{% extends 'base.html' %}
-{% block content %}
-                
-                <div class="container bg2 pb60">
-                    <h3 class="ch3">企业文化</h3>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js ie">
+<head>
+    <title>春色满园木业</title>
+    <meta charset="gb2312" />
+  <meta content="text/html; charset=gb2312" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+
+    <link type="text/css" rel="stylesheet" href="static/css/groundwork.css">
+    <link rel="stylesheet" href="static/css/index.css" />
+    <link rel="stylesheet" href="static/css/framework.css" />
+    <link rel="stylesheet" href="static/css/main.css" />
+
+    <style type="text/css">
+        #tab {
+    overflow: hidden;
+    position: relative;
+    float: left;
+}
+    #tab>img:not(:first-child) {
+    display: none;
+}
+    </style>
+    <script>
+        var interval;
+        var pos = 0;
+        window.onload = function() {
+            var images = document.getElementsByName('imgs');
+            var tab = document.getElementById("tab");
+            tab.onmouseover = function() {
+                clearInterval(interval);
+            }
+            tab.onmouseout = function() {
+                run(images);
+            }
+            run(images);
+        }
+        var run = function(images) {
+            interval = setInterval(function() {
+                images[pos].style.display = 'none';
+                pos = ++pos == images.length ? 0 : pos;
+                images[pos].style.display = 'inline';
+            }, 2000);
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div class="full_width border1b_e1e1e1 logos">
+    <div class="container">
+        <div class="clearfix">
+            <img class="logo" src="/static/images/logo.png"width="400" height="60" />
+        </div>
+    </div>
+  </div>
+<div class="full_width border1b_e1e1e1 relative niubnav">
+    <div class="container relative">
+        <div class="nav" title="">
+            <ul class="menubar">
+                <li class="lil1"><a href="/index.html">首页</a></li>
+                <li class="lil1"><a href="/introduction.html">公司介绍</a></li>
+                <li class="lil1"><a href="/product.html">产品中心</a></li>
+                <li class="lil1"><a href="/culture.html">企业文化</a></li>
+                <li class="lil1"><a href="/contact.html">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="tab" align: middle; border:none>
+        <img name = "imgs" src="/static/images/lunbo1.jpg" margin = "0" height="400"/>
+        <img name = "imgs" src="/static/images/lunbo2.jpg" margin = "0" height="400"  />
+        <img name = "imgs"  src="/static/images/lunbo3.jpg"margin = "0" height="400"  />
+    </div>
+
+    <div class="container bg2 pb60">
+                    <h1 class="titleH1">企业文化</h1>
                     <div class="container1000">
                         <div class="row hide-on-small-tablet hide-on-mobile">
                             <div class="one third one-up-small-tablet one-up-mobile">
@@ -84,4 +161,24 @@
                     </div>
                 </div>
         
-    {% endblock %}
+    <div class="full_width footer">
+    <div class="container">
+        
+        <div class="phone400 relative">
+            <a class="c4" >联系方式 15165307999
+            </a>
+        </div>
+        <div class="copyright">
+            <div class="copyright_at clearfix">
+                <div class="center">
+                    春色满园木业有限公司版权所有
+                </div>
+                
+            </div>   
+        </div>
+</div>
+</body>
+
+</html>
+
+                
